@@ -20,7 +20,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ubuntu
         key: ${{ secrets.SSH_KEY }}
-        source: "*"
+        source: "."
         target: "/home/ubuntu/"
 
     - name: Deploy Website
