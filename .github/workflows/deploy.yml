@@ -20,13 +20,13 @@ jobs:
       uses: appleboy/scp-action@master
 
       with:
-        host: ${{ secrets.HOST }}
+        host: ${{ secrets.DEV_HOST }}
         username: ubuntu
         key: ${{ secrets.SSH_KEY }}
         source: "index.html,style.css,about.html,contact.html"
         target: "/home/ubuntu/"
 
-    - name: Restart nginx on Dev Server
+    - name: Restart nginx on Dev Server ok
       uses: appleboy/ssh-action@master
 
       with:
@@ -49,7 +49,7 @@ jobs:
       uses: appleboy/scp-action@master
 
       with:
-        host: ${{ secrets.HOST }}
+        host: ${{ secrets.PROD_HOST }}
         username: ubuntu
         key: ${{ secrets.SSH_KEY }}
         source: "index.html,style.css,about.html,contact.html"
@@ -59,7 +59,7 @@ jobs:
       uses: appleboy/ssh-action@master
 
       with:
-        host: ${{ secrets.HOST }}
+        host: ${{ secrets.PROD_HOST }}
         username: ubuntu
         key: ${{ secrets.SSH_KEY }}
         script: |
